@@ -30,7 +30,7 @@ module.exports = {
     ['Jenkins', 70],
     ['CircleCI', 70],
     ['Bitrise', 70],
-    ['GraphQL', 70]
+    ['GraphQL', 70],
     ['Fastlane', 60]
   ],
   positions: [
