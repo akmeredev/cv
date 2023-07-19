@@ -3,8 +3,12 @@ module.exports = {
   title: 'Mobile Android Developer',
   facts: {
     'Residence': '<a href="https://goo.gl/maps/hkVeM57QeJzH7yKN6"><i class="fa fa-home fact-icon"></i>São Paulo</a>',
-    'LinkedIn': `<a href="https://www.linkedin.com/in/akmere-almeida"><i class="fa-brands fa-linkedin fact-icon"></i>Akme Re Almeida</a>`,
+    'LinkedIn': '<a href="https://www.linkedin.com/in/akmere-almeida"><i class="fa-brands fa-linkedin fact-icon"></i>Akme Re Almeida</a>',
     'Email': '<a href="mailto:akmerejf@gmail.com"><i class="fa fa-envelope fact-icon"></i>akmerejf@gmail.com</a>'
+  },
+  languages: {
+    'English': 'Advanced',
+    'Portuguese': 'Native'
   },
   skills: [
     ['Android', 100],
@@ -75,20 +79,5 @@ Developed and improved features for a Banking Android application. Being the onl
 `
     }
   ],
-  experience: [
-    {
-      header: 'Performance',
-      skills: ['theater', 'play'],
-      contents: `
-Thousands of performances of my plays have been staged since the end of the 16th century. Many of my greatest plays were performed by the Lord Chamberlain's Men and King's Men acting companies at the [Globe](https://en.wikipedia.org/wiki/Globe_Theatre) and Blackfriars Theatres.
-`
-    },
-    {
-      header: 'Poetry',
-      skills: ['poetry', 'erotic'],
-      contents: `
-In 1593 and 1594, when the theatres were closed because of plague, I published two narrative poems on sexual themes, Venus and Adonis and The Rape of Lucrece. I dedicated them to Henry Wriothesley, Earl of Southampton.
-`
-    }
-  ]
+
 };
