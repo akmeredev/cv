@@ -14,13 +14,16 @@ module.exports = {
     ['Android', 100],
     ['Kotlin', 100],
     ['Java', 100],
+    ['Swift', 70],
     ['TDD', 100],
     ['Flutter', 80],
     ['Leanback', 80],
     ['Dagger/Hilt', 100],
     ['Koin', 100],
+    ['Kodein', 100],
     ['Espresso', 90],
     ['Compose UI', 100],
+    ['SwiftUI', 70],
     ['MockK', 100],
     ['Mockito', 100],
     ['MVVM', 100],
@@ -39,8 +42,16 @@ module.exports = {
   ],
   positions: [
     {
-      title: 'Software Consultant/Specialist (Mobile) - Globant',
-      period: 'Sept 2022 - currently working',
+      title: 'Tech Leader Mobile (Payment application) - Globant',
+      period: 'Oct 2023 - currently working',
+      skills: ['android', 'ios', 'kotlin multiplatform', 'mobile', 'payment'],
+      contents: `
+As a Tech Leader, I led a team of 6 developers in the creation and scaling of a multiplatform mobile payment application for Android and iOS. I was responsible for defining the technical strategy, developing new features, onboarding new team members, and facilitating the adoption of Kotlin Multiplatform technologies.
+`
+    },
+    {
+      title: 'Android Specialist (Media application) - Globant',
+      period: 'Sept 2022 to Sept 2023',
       skills: ['android', 'flutter', 'mobile', 'consultancy'],
       contents: `
 As an Android Developer at a large Media client, successfully developed and maintained a top-rated media application for both mobile and TV devices. Focused on creating scalable, testable, and high-quality code, implemented a robust architecture using the latest Android SDK and best practices. Established a comprehensive unit and integration testing framework, enhancing code quality and reducing production defects. Collaborated with cross-functional teams to prioritize and implement new features, resulting in increased user engagement. Optimized app performance, significantly improving load times and reducing crashes. Integrated CI/CD pipelines to streamline the development process. Improved experience in Flutter SDK by implementing a fresh mobile application which consists of managing a websocket connection to let the user join in a Scrum Poker session previously created by a web client. Developing this application, went through all steps of development, from planning features, helping achieve better UI/UX, creating CI/CD pipelines, code testing and implementation to delivering the application to the final users.      
