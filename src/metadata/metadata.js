@@ -1,14 +1,14 @@
 module.exports = {
   name: 'Akme Re Monteiro de Almeida',
-  title: 'Mobile Android Developer',
+  title: 'Engenheiro de Software/Especialista (Android)',
   facts: {
-    'Residence': '<a href="https://goo.gl/maps/hkVeM57QeJzH7yKN6"><i class="fa fa-home fact-icon"></i>São Paulo</a>',
+    'Residência': '<a href="https://goo.gl/maps/hkVeM57QeJzH7yKN6"><i class="fa fa-home fact-icon"></i>São Paulo</a>',
     'LinkedIn': '<a href="https://www.linkedin.com/in/akmere-almeida"><i class="fa-brands fa-linkedin fact-icon"></i>Akme Re Almeida</a>',
     'Email': '<a href="mailto:akmerejf@gmail.com"><i class="fa fa-envelope fact-icon"></i>akmerejf@gmail.com</a>'
   },
   languages: {
-    'English': 'Advanced',
-    'Portuguese': 'Native'
+    'Inglês': 'Avançado',
+    'Português': 'Nativo'
   },
   skills: [
     ['Android', 100],
@@ -42,51 +42,52 @@ module.exports = {
   ],
   positions: [
     {
-      title: 'Tech Leader Mobile (Payment application) - Globant',
+      title: 'Líder Técnico Mobile (Aplicação de Pagamento) - Globant',
       period: 'Oct 2023 - currently working',
       skills: ['android', 'ios', 'kotlin multiplatform', 'mobile', 'payment'],
       contents: `
-As a Tech Leader, I led a team of 6 developers in the creation and scaling of a multiplatform mobile payment application for Android and iOS. I was responsible for defining the technical strategy, developing new features, onboarding new team members, and facilitating the adoption of Kotlin Multiplatform technologies.
+
+Como Líder Técnico, liderei uma equipe de 6 desenvolvedores na criação e escalabilidade de uma aplicação móvel multiplataforma para Android e iOS. Fui responsável por definir a estratégia técnica, desenvolver novas funcionalidades, integrar novos membros à equipe e facilitar a adoção da tecnologia Kotlin Multiplatforma. Bem como apoiar no desenvolvimento de novas funcionalidades tanto em Android quanto em iOS.
 `
     },
     {
-      title: 'Android Specialist (Media application) - Globant',
+      title: 'Especialista Android (Aplicação de Streaming) - Globant',
       period: 'Sept 2022 to Sept 2023',
       skills: ['android', 'flutter', 'mobile', 'consultancy'],
       contents: `
-As an Android Developer at a large Media client, successfully developed and maintained a top-rated media application for both mobile and TV devices. Focused on creating scalable, testable, and high-quality code, implemented a robust architecture using the latest Android SDK and best practices. Established a comprehensive unit and integration testing framework, enhancing code quality and reducing production defects. Collaborated with cross-functional teams to prioritize and implement new features, resulting in increased user engagement. Optimized app performance, significantly improving load times and reducing crashes. Integrated CI/CD pipelines to streamline the development process. Improved experience in Flutter SDK by implementing a fresh mobile application which consists of managing a websocket connection to let the user join in a Scrum Poker session previously created by a web client. Developing this application, went through all steps of development, from planning features, helping achieve better UI/UX, creating CI/CD pipelines, code testing and implementation to delivering the application to the final users.      
+Como Desenvolvedor Android em um grande cliente de mídia, desenvolvi e mantive com sucesso um aplicativo de mídia altamente avaliado para dispositivos móveis e de TV. Foquei na criação de um código escalável, testável e de alta qualidade, implementando uma arquitetura robusta com o mais recente SDK do Android e melhores práticas. Estabeleci uma estrutura abrangente de testes unitários e de integração, o que melhorou a qualidade do código e reduziu defeitos na produção. Colaborei com equipes multifuncionais para priorizar e implementar novas funcionalidades, resultando em maior engajamento dos usuários. Otimizei o desempenho do aplicativo, melhorando significativamente os tempos de carregamento e reduzindo falhas. Integrei pipelines CI/CD para agilizar o processo de desenvolvimento. Aumentei a experiência com o SDK Flutter ao implementar um novo aplicativo móvel que gerencia uma conexão websocket para permitir que o usuário participe de uma sessão de Scrum Poker criada anteriormente por um cliente web. Durante o desenvolvimento deste aplicativo, passei por todas as etapas do processo, desde o planejamento de funcionalidades, ajudando a alcançar uma melhor UI/UX, criação de pipelines CI/CD, testes de código e implementação até a entrega do aplicativo para os usuários finais.
 `
     },
     {
-      title: 'Software Consultant/Specialist (Android) - ThoughtWorks',
+      title: 'Consultor/Especialista (Android) - ThoughtWorks',
       period: 'December 2020 to Sept 2022',
       skills: ['android', 'jetpack compose', 'consultancy'],
       contents: `
-Worked as a Senior Software Consultant for the majority of projects. Delivering high performance, scalable and well tested Android applications, as well as solving architectural bottlenecks with state of the art solutions in the mobile ecosystem. Worked side by side with the UI/UX team, Backend team, and PMs in order to deliver the best possible solution to our clients. Developed native Android and multiplatform SDKs as well as integrated them in the end user Android applications. Integrated both Rest and GraphQL APIs for three different kinds of Android projects, using third party and inhouse http client solutions.
+Trabalhei como Consultor de Software Sênior na maioria dos projetos, entregando aplicativos Android de alto desempenho, escaláveis e bem testados, além de resolver gargalos arquiteturais com soluções de ponta no ecossistema mobile. Colaborei diretamente com as equipes de UI/UX, Backend e PMs para fornecer a melhor solução possível para nossos clientes. Desenvolvi SDKs nativos para Android e multiplataforma, além de integrá-los nos aplicativos Android destinados aos usuários finais. Integrei APIs Rest e GraphQL em três diferentes tipos de projetos Android, utilizando soluções de clientes HTTP de terceiros e internas.
 `
     },
     {
-      title: 'Software Engineer/Specialist (Android) - Grupo Zap',
+      title: 'Engenheiro de Software/Especialista (Android) - Grupo Zap',
       period: 'Feb 2020 to Dec 2020',
       skills: ['android', 'kotlin multiplatform', 'flutter', 'real estate'],
       contents: `
-Joined Grupo Zap to integrate the team that would take care of three mobile applications in two platforms, which are marketplaces to showcase listings of properties. They developed a multiplatform SDK built on top of Kotlin Native to handle metrics between native applications (Android and iOS) and all kinds of Analytics providers, like Firebase, Google Analytics, Facebook Analytics and so on. After that, Akme Re became part of a project to start using BDD on mobile applications, creating a multiplatform project using Appium + Cucumber and integrating it on mobile applications CI/CD flow. After that, they went back to native Android development / improvement in order to create Android feature modules with modern Android development and Flutter Platform Channels adding these modules/features into existing native applications, allowing for seamless cross-platform functionality.
+Entrei para o Grupo Zap para integrar a equipe responsável por três aplicativos móveis em duas plataformas, que são marketplaces para exibir listagens de propriedades. Desenvolveram um SDK multiplataforma baseado em Kotlin Native para gerenciar métricas entre aplicativos nativos (Android e iOS) e diversos provedores de análise, como Firebase, Google Analytics, Facebook Analytics, entre outros. Em seguida, a Akme Re fez parte de um projeto para começar a usar BDD em aplicativos móveis, criando um projeto multiplataforma usando Appium + Cucumber e integrando-o no fluxo CI/CD dos aplicativos móveis. Após isso, a equipe voltou ao desenvolvimento e aprimoramento nativo para Android com o objetivo de criar módulos de funcionalidades Android modernos e canais de plataforma Flutter, adicionando esses módulos/funcionalidades em aplicativos nativos existentes, permitindo uma funcionalidade cruzada sem costura.
 `
     },
     {
-      title: 'Software Engineer/Specialist (Android) - PayGo',
+      title: 'Engenheiro de Software/Especialista (Android) - PayGo',
       period: 'Feb 2019 to Feb 2020',
       skills: ['android', 'payment methods'],
       contents: `
-Developed from scratch a Payment application which communicates with PinPad devices through Bluetooth, using the already developed SDKs. Started on native Android SDKs development / improvement when the project grew and more developers were hired. Built CI/CD pipelines and versioning of SDKs to achieve high scale management.
+Desenvolvi do zero um aplicativo de pagamentos que se comunica com dispositivos PinPad via Bluetooth, utilizando os SDKs já desenvolvidos. Iniciei o desenvolvimento e aprimoramento de SDKs nativos para Android conforme o projeto cresceu e mais desenvolvedores foram contratados. Criei pipelines CI/CD e sistemas de versionamento dos SDKs para alcançar uma gestão em larga escala.
 `
     },
     {
-      title: 'Software Engineer/Specialist (Android) - Vibe Desenvolvimento',
+      title: 'Engenheiro de Software/Especialista (Android) - Vibe Desenvolvimento',
       period: 'Jul 2018 to Jan 2019',
       skills: ['android', 'banking'],
       contents: `
-Developed and improved features for a Banking Android application. Being the only Android developer in the team, Akme Re had autonomy to study and implement new technologies as well as participate in the decision about new features.
+Desenvolvi e melhorei funcionalidades para um aplicativo bancário Android. Sendo o único desenvolvedor Android na equipe, tive autonomia para estudar e implementar novas tecnologias, além de participar das decisões sobre novas funcionalidades.
 `
     }
   ],
