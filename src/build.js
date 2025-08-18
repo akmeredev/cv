@@ -21,15 +21,41 @@ fs.copySync(srcDir + '/assets', outputDir);
 handlebars.registerHelper('markdown', markdownHelper);
 const source = fs.readFileSync(srcDir + '/templates/index.html', 'utf-8');
 const template = handlebars.compile(source);
-const pdfFileName = `${getSlug(templateData.name)}.${getSlug(templateData.title)}.pdf`;
+
+// Generate PDF filenames for both languages
+const pdfFileNameEn = `${getSlug(templateData.name)}.${getSlug(templateData.title)}.pdf`;
+const pdfFileNamePt = `${getSlug(templateData.name)}.${getSlug(templateData.title_pt)}.pdf`;
+
+// Format dates for both languages
+const updatedEn = dayjs().format('MM/DD/YYYY');
+const updatedPt = dayjs().format('DD/MM/YYYY');
+
 const html = template({
   ...templateData,
   baseUrl: `https://${username()}.github.io/${repoName.sync()}`,
-  pdfFileName,
-  updated: dayjs().format('D, MM, YYYY'),
+  pdfFileNameEn,
+  pdfFileNamePt,
+  updatedEn,
+  updatedPt,
 });
 
 fs.writeFileSync(outputDir + '/index.html', html);
 
-// Build PDF
-buildPdf(`${outputDir}/index.html`, `${outputDir}/${pdfFileName}`);
+// Build PDFs for both languages
+async function buildPdfs() {
+  try {
+    // Build English PDF
+    console.log('Building English PDF...');
+    await buildPdf(`${outputDir}/index.html`, `${outputDir}/${pdfFileNameEn}`, 'en');
+    
+    // Build Portuguese PDF
+    console.log('Building Portuguese PDF...');
+    await buildPdf(`${outputDir}/index.html`, `${outputDir}/${pdfFileNamePt}`, 'pt');
+    
+    console.log('PDFs generated successfully!');
+  } catch (error) {
+    console.error('Error generating PDFs:', error);
+  }
+}
+
+buildPdfs();

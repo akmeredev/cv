@@ -16,20 +16,31 @@
 <body>
 	
 <div class="container page">
+    <!-- Language Selector -->
+    <div class="text-end mb-3">
+        <div class="btn-group" role="group" aria-label="Language selector">
+            <button type="button" class="btn btn-outline-primary btn-sm active" onclick="changeLanguage('en')" data-lang="en">EN</button>
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="changeLanguage('pt')" data-lang="pt">PT</button>
+        </div>
+    </div>
+
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
         <div class="row">
             <div class="col-print-6 col-12 col-md-4 d-flex justify-content-between flex-column">
                 <div>
                     <h1 class="mb-0">{{ name }}</h1>
-                    <div class="fs-3">{{ title }}</div>
+                    <div class="fs-3" data-en="{{ title }}" data-pt="{{ title_pt }}">{{ title }}</div>
                 </div>
                 <div>
                     <p>
-                        <time datetime="{{ buildinfo.date }}" class="small">Last update: {{ updated }}</time>
+                        <time datetime="{{ buildinfo.date }}" class="small" data-en="Last update: {{ updatedEn }}" data-pt="Última atualização: {{ updatedPt }}">Last update: {{ updatedEn }}</time>
                     </p>
                     <p>
-                        <span class="screen"><a href="{{ pdfFileName }}"><i class="far fa-file-pdf"></i>Download PDF version</a></span>
-                        <span class="print">A versão mais atualizada do currículo está disponível em <a href="{{ baseUrl }}"
+                        <span class="screen">
+                            <a href="{{ pdfFileNameEn }}" id="pdf-download-en"><i class="far fa-file-pdf"></i><span data-en="Download PDF version (English)" data-pt="Baixar versão PDF (Inglês)">Download PDF version (English)</span></a>
+                            <a href="{{ pdfFileNamePt }}" id="pdf-download-pt" style="display: none;"><i class="far fa-file-pdf"></i><span data-en="Download PDF version (Portuguese)" data-pt="Baixar versão PDF (Português)">Download PDF version (Portuguese)</span></a>
+                        </span>
+                        <span class="print" data-en="The most updated version of the resume is available at" data-pt="A versão mais atualizada do currículo está disponível em">The most updated version of the resume is available at <a href="{{ baseUrl }}"
                                                                                         class="text-nowrap"><i
                             class="fab fa-github" aria-hidden="true"></i>{{ baseUrl }}</a></span>
                     </p>
@@ -39,10 +50,10 @@
                 <img src="cv_profile.jpg" class="rounded-circle img-fluid" alt="Personal photo">
             </div>
             <div class="col-print-6 col-12 col-md-5 offset-lg-1 col-lg-4">
-                <ul class="list-group list-group-flush">
+                <ul class="list-group list-group-flush" id="facts-container">
                     {{#each facts}}
                     <li class="list-group-item d-flex justify-content-between align-items-start">
-                        <span class="text-nowrap">{{ @key }}</span>
+                        <span class="text-nowrap" data-en="{{ @key }}" data-pt="{{ @key }}">{{ @key }}</span>
                         <span class="text-nowrap">{{{ this }}}</span>
                     </li>
                     {{/each}}
@@ -52,19 +63,19 @@
         </div>
     </div>
 	<div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h3 class="h3 screen mb-4">Indiomas</h3>
-		<ul class="list-group list-group-flush ">
+        <h3 class="h3 screen mb-4" data-en="Languages" data-pt="Idiomas">Languages</h3>
+		<ul class="list-group list-group-flush" id="languages-container">
 			{{#each languages}}
 			<li class="list-group-item d-inline-flex justify-content-between align-items-start">
-				<span class="text-nowrap">{{ @key }}</span>
-				<span class="text-nowrap ">{{{ this }}}</span>
+				<span class="text-nowrap" data-en="{{ name }}" data-pt="{{ name }}">{{ name }}</span>
+				<span class="text-nowrap" data-en="{{ level }}" data-pt="{{ level }}">{{ level }}</span>
 			</li>
 			{{/each}}
 		</ul>
 	</div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h3 class="h2 screen mb-4">Skills</h3>
+        <h3 class="h2 screen mb-4" data-en="Skills" data-pt="Habilidades">Skills</h3>
         <div class="row align-items-center">
             {{#each skills}}
             <div class="col-print-1 col-3 col-md-2 col-lg-1 text-right">
@@ -80,19 +91,20 @@
     </div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        Engenheiro de Software Mobile altamente qualificado e versátil, com vasta experiência nas indústrias de mídia, bancária, pagamentos, imóveis, entretenimento e moda. Especialista em Android, com sólido conhecimento em Kotlin Multiplatform Mobile (KMM) e Flutter SDK. Proficiente em Kotlin, Android Compose UI e Integração de APIs. Hábil em análise de requisitos, metodologias ágeis, desenvolvimento de pipelines CI/CD e testes unitários e de integração. Comprovada capacidade de liderar equipes, orientar desenvolvedores e colaborar com equipes multifuncionais para entregar aplicativos móveis de alta qualidade e escaláveis.    </div>
+        <span data-en="{{ summary }}" data-pt="{{ summary_pt }}">{{ summary }}</span>
+    </div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h2 class="mb-4">Experiência profissional</h2>
+        <h2 class="mb-4" data-en="Professional Experience" data-pt="Experiência Profissional">Professional Experience</h2>
         {{#each positions}}
         <div class="row d-block d-md-flex{{#unless @last}} mb-5{{/unless}}">
-            <div class="col-md-2 pt-1">
+            <div class="col-md-2 pt-1" data-en="{{ period }}" data-pt="{{ period_pt }}">
                 {{ period }}
             </div>
             <div class="col-md-10">
                 <h3 class="fs-4 fw-normal">{{ title }}</h3>
 
-                <div>{{{markdown contents }}}</div>
+                <div><p data-en="{{{contents}}}" data-pt="{{{contents_pt}}}">{{{contents}}}</p></div>
 
                 <p>
                     {{#each skills }}
@@ -105,9 +117,119 @@
     </div>
 
     <div class="border-bottom border-2 border-print-0 border-dark mb-5 pb-5 pb-print-0 mb-print-1">
-        <h2 class="mb-4">Formação</h2>
-        <div>Bacharelado em Ciência da Computação - CESUPA – Centro Educacional do Estado do Pará 2018.</div>
+        <h2 class="mb-4" data-en="Education" data-pt="Formação">Education</h2>
+        <div data-en="{{ education }}" data-pt="{{ education_pt }}">{{ education }}</div>
     </div>
 </div>
+
+<script>
+function changeLanguage(lang) {
+    // Update button states
+    document.querySelectorAll('[data-lang]').forEach(btn => {
+        btn.classList.remove('active');
+    });
+    document.querySelector(`[data-lang="${lang}"]`).classList.add('active');
+    
+    // Update content
+    document.querySelectorAll('[data-en][data-pt]').forEach(element => {
+        element.textContent = element.getAttribute(`data-${lang}`);
+    });
+    
+    // Update HTML lang attribute
+    document.documentElement.lang = lang === 'pt' ? 'pt-BR' : 'en';
+    
+    // Update title
+    const title = lang === 'pt' ? 
+        '{{ name }}. {{ title_pt }}' :
+        '{{ name }}. {{ title }}';
+    document.title = title;
+    
+    // Update PDF download links
+    const pdfDownloadEn = document.getElementById('pdf-download-en');
+    const pdfDownloadPt = document.getElementById('pdf-download-pt');
+    
+    if (lang === 'pt') {
+        pdfDownloadEn.style.display = 'none';
+        pdfDownloadPt.style.display = 'inline';
+    } else {
+        pdfDownloadEn.style.display = 'inline';
+        pdfDownloadPt.style.display = 'none';
+    }
+    
+    // Update facts section
+    updateFactsSection(lang);
+    
+    // Update languages section
+    updateLanguagesSection(lang);
+}
+
+function updateFactsSection(lang) {
+    const factsContainer = document.getElementById('facts-container');
+    if (!factsContainer) return;
+    
+    const factsData = {
+        en: {
+            'Residence': '<a href="https://goo.gl/maps/hkVeM57QeJzH7yKN6"><i class="fa fa-home fact-icon"></i>São Paulo</a>',
+            'LinkedIn': '<a href="https://www.linkedin.com/in/akmere-almeida"><i class="fa-brands fa-linkedin fact-icon"></i>Akme Re Almeida</a>',
+            'Email': '<a href="mailto:akmerejf@gmail.com"><i class="fa fa-envelope fact-icon"></i>akmerejf@gmail.com</a>'
+        },
+        pt: {
+            'Residência': '<a href="https://goo.gl/maps/hkVeM57QeJzH7yKN6"><i class="fa fa-home fact-icon"></i>São Paulo</a>',
+            'LinkedIn': '<a href="https://www.linkedin.com/in/akmere-almeida"><i class="fa-brands fa-linkedin fact-icon"></i>Akme Re Almeida</a>',
+            'Email': '<a href="mailto:akmerejf@gmail.com"><i class="fa fa-envelope fact-icon"></i>akmerejf@gmail.com</a>'
+        }
+    };
+    
+    const currentFacts = factsData[lang];
+    const listItems = factsContainer.querySelectorAll('li');
+    
+    listItems.forEach((item, index) => {
+        const keySpan = item.querySelector('span:first-child');
+        const valueSpan = item.querySelector('span:last-child');
+        
+        if (keySpan && valueSpan) {
+            const keys = Object.keys(currentFacts);
+            if (keys[index]) {
+                keySpan.textContent = keys[index];
+                valueSpan.innerHTML = currentFacts[keys[index]];
+            }
+        }
+    });
+}
+
+function updateLanguagesSection(lang) {
+    const languagesContainer = document.getElementById('languages-container');
+    if (!languagesContainer) return;
+    
+    const languagesData = {
+        en: [
+            { name: 'English', level: 'Advanced' },
+            { name: 'Portuguese', level: 'Native' }
+        ],
+        pt: [
+            { name: 'Inglês', level: 'Avançado' },
+            { name: 'Português', level: 'Nativo' }
+        ]
+    };
+    
+    const currentLanguages = languagesData[lang];
+    const listItems = languagesContainer.querySelectorAll('li');
+    
+    listItems.forEach((item, index) => {
+        const nameSpan = item.querySelector('span:first-child');
+        const levelSpan = item.querySelector('span:last-child');
+        
+        if (nameSpan && levelSpan && currentLanguages[index]) {
+            nameSpan.textContent = currentLanguages[index].name;
+            levelSpan.textContent = currentLanguages[index].level;
+        }
+    });
+}
+
+// Initialize with English
+document.addEventListener('DOMContentLoaded', function() {
+    changeLanguage('en');
+});
+</script>
 </body>
 </html>
