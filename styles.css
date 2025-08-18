@@ -16,7 +16,32 @@ h1, h2, h3, h4 {
     color: #000000;
 }
 
+/* Language Selector Styles */
+.btn-group .btn {
+    font-size: 0.875rem;
+    font-weight: 500;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    transition: all 0.2s ease-in-out;
+}
+
+.btn-group .btn.active {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+    color: white;
+}
+
+.btn-group .btn:hover:not(.active) {
+    background-color: #f8f9fa;
+    border-color: var(--bs-primary);
+    color: var(--bs-primary);
+}
+
 @media print {
+    .btn-group {
+        display: none !important;
+    }
+    
     :root {
         --bs-body-color: #000;
     }
